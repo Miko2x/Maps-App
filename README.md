@@ -5,11 +5,11 @@ This application only contains the map view, and just display the style on the m
 
 # Features
 - Home screen with finger button (_not fingerprint_)
-![Home](https://github.com/Miko2x/Maps-App/blob/master/src/assets/Screenshot_2018-11-07-22-28-58-606_com.mapapp.png)
+![Home](https://github.com/Miko2x/Maps-App/blob/master/src/components/assets/Screenshot_2018-11-07-22-28-58-606_com.mapapp.png)
 - Login screen without authentication
-![Login](https://github.com/Miko2x/Maps-App/blob/master/src/assets/Screenshot_2018-11-07-22-29-03-709_com.mapapp.png)
+![Login](https://github.com/Miko2x/Maps-App/blob/master/src/components/assets/Screenshot_2018-11-07-22-29-03-709_com.mapapp.png)
 - MapView pins and markers on the map, as well as search and user buttons, and also a descriptions of the mark
-![Map](https://github.com/Miko2x/Maps-App/blob/master/src/assets/Screenshot_2018-11-07-22-29-17-425_com.mapapp.png)
+![Map](https://github.com/Miko2x/Maps-App/blob/master/src/components/assets/Screenshot_2018-11-07-22-29-17-425_com.mapapp.png)
 
 # Fork the repository
 **Fork** [Maps-App](https://github.com/Miko2x/Maps-App/fork) repo
