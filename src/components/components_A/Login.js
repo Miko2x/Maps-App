@@ -1,7 +1,11 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, Image, ImageBackground, StyleSheet, TextInput } from 'react-native';
+import React, {Component} from 'react';
+import { View, Text, TouchableOpacity, Image, ImageBackground, TextInput } from 'react-native';
+import BgHome from '../assets/BgHome.png';
+import userLogin from '../assets/userLogin.png';
+import key from '../assets/key.png';
+import {styles} from '../styles/Styles.Login';
 
-export default class Login extends React.Component {
+class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -22,60 +26,47 @@ export default class Login extends React.Component {
     }
     render(){
         return (
-            <ImageBackground
-                source={require('./assets/BgHome.png')}
-                style={{ width: 360, height: 620 }}
-            >
-            <View style={{ justifyContent: 'center', alignSelf: 'center', backgroundColor: 'white', height: '55%', width: '85%', borderRadius: 5, top: '23%'}}>
-                <Text style={{ fontSize: 25, alignSelf: 'center', bottom: 20 }}>Login</Text>
-                <Image
-                    source={require('./assets/userLogin.png')}
-                    style={{ height: 20, width: 20, top: '10%', left: '11%' }}
-                />
-                
-                <TextInput
-                    style={styles.input}
-                    onChangeText={(text) => this.setState({username: text})}
-                    placeholder="Username"
-                    placeholderTextColor='#cdcdcd'
-                />
-                <View style={ styles.line } />
-                <Image 
-                    source={require('./assets/key.png')}
-                    style={{ height: 20, width: 19, top: '10%', left: '11%' }}
-                />
-                <TextInput
-                    style={styles.input}
-                    onChangeText={(text) => this.setState({password: text})}
-                    secureTextEntry={true}
-                    placeholder="Password"
-                    placeholderTextColor='#cdcdcd'
-                />
-                <View style={styles.line}/>
-                <TouchableOpacity
-                    onPress={() => this.submit()}
-                    style={{ width: '85%', height: '15%', backgroundColor: '#2db784', borderRadius: 10, alignSelf: 'center', top: '8%', elevation: 3}}
+            <View style={styles.container}>
+                <ImageBackground
+                    source={BgHome}
+                    style={styles.BgHome}
                 >
-                <Text style={{ color: 'white', textAlign: 'center', top: 10, fontSize: 18 }}>Login</Text>
-                </TouchableOpacity>
+                    <View style={styles.bubble}>
+                        <Text style={styles.bubbleText}>Login</Text>
+                        <Image
+                            source={userLogin}
+                            style={styles.userLogin}
+                        />
+                        <TextInput
+                            style={styles.input}
+                            onChangeText={(text) => this.setState({username: text})}
+                            placeholder="Username"
+                            placeholderTextColor='#cdcdcd'
+                        />
+                        <View style={ styles.line } />
+                        <Image 
+                            source={key}
+                            style={styles.key}
+                        />
+                        <TextInput
+                            style={styles.input}
+                            onChangeText={(text) => this.setState({password: text})}
+                            secureTextEntry={true}
+                            placeholder="Password"
+                            placeholderTextColor='#cdcdcd'
+                        />
+                        <View style={styles.line}/>
+                        <TouchableOpacity
+                            onPress={() => this.submit()}
+                            style={styles.buttonLogin}
+                        >
+                            <Text style={styles.textLogin}>Login</Text>
+                        </TouchableOpacity>
+                    </View>
+                </ImageBackground>
             </View>
-            </ImageBackground>
-        )
+        );
     }
 }
 
-const styles = StyleSheet.create({
-    input: {
-        bottom: 5,
-        margin: 5,
-        left: 55,
-    },
-    line: {
-        bottom: 13,
-        width: 250,
-        justifyContent: 'center',
-        alignSelf: 'center',
-        borderBottomWidth: 1,
-        borderBottomColor: '#dbdbdb',
-    }
-});
+export default Login;
