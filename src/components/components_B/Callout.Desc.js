@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Image } from 'react-native';
 import { Callout } from 'react-native-maps';
-import Null from './assets/null.png'
-export default class CalloutDesc extends React.Component{
+import Null from './assets/null.png';
+
+class CalloutDesc extends Component{
     render(){
         return(
             <View style = {styles.container}>
@@ -24,7 +25,8 @@ export default class CalloutDesc extends React.Component{
                             <View style={styles.nullIconView}>
                                 <Image
                                     source={Null}
-                                    style={styles.nullIcon}/>
+                                    style={styles.nullIcon}
+                                />
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.bubble}>
@@ -40,7 +42,8 @@ export default class CalloutDesc extends React.Component{
                             <View style={styles.nullIconView}>
                                 <Image
                                     source={Null}
-                                    style={styles.nullIcon}/>
+                                    style={styles.nullIcon}
+                                />
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.bubble}>
@@ -56,7 +59,8 @@ export default class CalloutDesc extends React.Component{
                             <View style={styles.nullIconView}>
                                 <Image
                                     source={Null}
-                                    style={styles.nullIcon}/>
+                                    style={styles.nullIcon}
+                                />
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.bubble}>
@@ -72,7 +76,8 @@ export default class CalloutDesc extends React.Component{
                             <View style={styles.nullIconView}>
                                 <Image
                                     source={Null}
-                                    style={styles.nullIcon}/>
+                                    style={styles.nullIcon}
+                                />
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.bubble}>
@@ -88,13 +93,14 @@ export default class CalloutDesc extends React.Component{
                             <View style={styles.nullIconView}>
                                 <Image
                                     source={Null}
-                                    style={styles.nullIcon}/>
+                                    style={styles.nullIcon}
+                                />
                             </View>
                         </TouchableOpacity>
                     </ScrollView>
                 </Callout>
             </View>
-        )
+        );
     }
 }
 
@@ -155,4 +161,6 @@ const styles = StyleSheet.create({
         top: '47%',
         left: '57%'
     },
-})
+});
+
+export default CalloutDesc;

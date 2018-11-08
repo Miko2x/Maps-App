@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import { View, StyleSheet, Image } from 'react-native';
 import MapView from 'react-native-maps';
-import CalloutMap from './Callout.Button';
-import CalloutDesc from './Callout.Desc';
+import CalloutMap from '../components_B/Callout.Button';
+import CalloutDesc from '../components_B/Callout.Desc';
 
 const pin = require('./assets/pin.png')
 
