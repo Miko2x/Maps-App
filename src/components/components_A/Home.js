@@ -1,139 +1,93 @@
-import React, {Component} from 'react';
-import { View, StyleSheet, Image } from 'react-native';
-import MapView, {Marker} from 'react-native-maps';
-import CalloutMap from './Callout.Button';
-import CalloutDesc from './Callout.Desc';
+import React from 'react';
+import { View, Text, TouchableOpacity, Image, ImageBackground, StyleSheet } from 'react-native';
 
-const pin = require('./assets/pin.png')
-
-class Map extends Component{
-
-    render () {
+export default class Home extends React.Component {
+    moveScreen() {
+        this.props.navigation.navigate('Screen2')
+    }
+    render() {
         return(
-            <View style={styles.container}>
-                <MapView
-                    style={styles.map}
-                    showsUserLocation={false}
-                    initialRegion = {{
-                        latitude: 40.7112432,
-                        longitude: -74.0071598,
-                        latitudeDelta: 0.0135,
-                        longitudeDelta: 0.0001,
-                    }} 
-                >
-                    <MapView.Marker
-                        coordinate={{
-                            latitude: 40.7112432,
-                            longitude: -74.0071598,
-                        }}
+                <View style={styles.container}>
+                    <ImageBackground
+                        source={require('./assets/BgHome.png')} 
+                        style={styles.bg}
                     >
-                        <View style={styles.radius}>
-                            <View style={styles.marker}/>
-                        </View>
-                    </MapView.Marker>
-                    <MapView.Marker
-                        coordinate={{
-                            latitude: 40.7112304,
-                            longitude: -74.0053583,
-                        }}
-                    >
-                        <View>
-                            <Image 
-                                source={pin}
-                                style={styles.pinIcon}/>
-                        </View>
-                    </MapView.Marker>
-                    <MapView.Marker
-                        coordinate={{
-                            latitude: 40.7163131,
-                            longitude: -74.004208,
-                        }}
-                    >
-                        <View>
-                            <Image 
-                                source={pin}
-                                style={styles.pinIcon}/>
-                        </View>
-                    </MapView.Marker>
-                    <MapView.Marker
-                        coordinate={{
-                            latitude: 40.7148131,
-                            longitude: -74.005823,
-                        }}
-                    >
-                        <View>
-                            <Image 
-                                source={pin}
-                                style={styles.pinIcon}/>
-                        </View>
-                    </MapView.Marker>
-                    <MapView.Marker
-                        coordinate={{
-                            latitude: 40.7162877,
-                            longitude: -74.0077296,
-                        }}
-                    >
-                        <View>
-                            <Image 
-                                source={pin}
-                                style={styles.pinIcon}/>
-                        </View>
-                    </MapView.Marker>
-                    <MapView.Marker
-                        coordinate={{
-                            latitude: 40.7139496,
-                            longitude: -74.0091625,
-                        }}
-                    >
-                        <View>
-                            <Image 
-                                source={pin}
-                                style={styles.pinIcon}/>
-                        </View>
-                    </MapView.Marker>
-                </MapView>
-                <CalloutMap/>
-                <CalloutDesc/>
-            </View>
-        );
+                    <Text style={styles.text1}>Hello!</Text>
+                    <Text style={styles.text2}>Welcome to Map App.</Text>
+                        <TouchableOpacity 
+                            style={styles.finger}
+                        >
+                            <Image
+                                source={require('./assets/fingerTouch.png')}
+                                style={styles.fingerIcon}
+                            />
+                        </TouchableOpacity>
+                        
+                        <TouchableOpacity 
+                            onPress={() => this.moveScreen()}
+                            style={styles.login}
+                        >
+                            <View style={styles.loginView}>
+                                <Text style={styles.loginText}>Login</Text>
+                            </View>
+                        </TouchableOpacity>
+                        
+                    </ImageBackground>
+                </View>
+        )
     }
 }
 
 const styles = StyleSheet.create({
-    container: {
-        ...StyleSheet.absoluteFillObject,
-        height: 650,
-        width: 360,
-        justifyContent: 'flex-end',
-        alignItems: 'center',
+    container:{
+        flex: 1
     },
-    map: {
-        ...StyleSheet.absoluteFillObject,
+    text1: {
+        color: 'white',
+        fontSize: 60,
+        fontWeight: '400',
+        fontFamily: 'HelveticaNeueLight',
+        paddingLeft: 25,
+        marginTop: 60,
     },
-      radius: {
-        height: 80,
-        width: 80,
-        borderRadius: 80 / 2,
-        overflow: 'hidden',
-        backgroundColor: 'rgba(45, 183, 132, 0.1)',
-        borderWidth: 1,
-        borderColor: 'rgba(45, 183, 132, 0.3)',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-      marker: {
-          height: 20,
-          width: 20,
-          borderWidth: 3,
-          borderColor: 'white',
-          borderRadius: 20 / 2,
-          overflow: 'hidden',
-          backgroundColor: 'rgb(45, 183, 132)',
-    },
-      pinIcon: { 
-          height: 40, 
-          width: 40 
-    }
-});
+    text2: {
+        color: 'white',
+        fontSize: 40,
+        paddingLeft: 25,
+        marginTop: 10,
+        fontFamily: 'HelveticaNeueLight',
 
-export default Map;
+    },
+    bg: { 
+        height: '100%', 
+        width: '100%' 
+    },
+    finger: {  
+        position: 'absolute', 
+        alignSelf: 'center',
+        justifyContent: 'center', 
+        marginTop: 350,
+    },
+    fingerIcon: { 
+        height: 100, 
+        width: 100,
+    },
+    login: { 
+        position: 'absolute', 
+        alignSelf: 'center', 
+        justifyContent: 'center', 
+        marginTop: 540
+    },
+    loginView: { 
+        backgroundColor: 'rgb(210, 210, 210)', 
+        height: 50, 
+        width: 300, 
+        borderRadius: 10, 
+    },
+    loginText: { 
+        fontSize: 16,
+        textAlign: 'center', 
+        fontFamily: 'HelveticaNeueLight',
+        marginTop: 15,
+    },
+})
