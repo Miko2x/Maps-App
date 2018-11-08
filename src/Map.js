@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { View, StyleSheet, Image } from 'react-native';
-import MapView, {Marker} from 'react-native-maps';
+import MapView from 'react-native-maps';
 import CalloutMap from './Callout.Button';
 import CalloutDesc from './Callout.Desc';
 
