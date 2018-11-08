@@ -1,51 +1,40 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Callout } from 'react-native-maps';
+import search from '../assets/search.png';
+import user from '../assets/user.png';
 
-export default class CalloutMap extends React.Component{
+class CalloutMap extends Component{
     render(){
         return(
-        <View style={{ flex: 1 }}>
-            <View style={{ marginTop: '7%', marginLeft: '77%' }}>
+        <View style={styles.container}>
+            <View style={styles.searchView}>
                 <Callout>
-                    <TouchableOpacity style={styles.image}>
+                    <TouchableOpacity style={styles.imageButton}>
                         <Image
-                            source={require('./assets/search.png')}
+                            source={search}
                             style={styles.imageIcon}
                         />
                     </TouchableOpacity>
                 </Callout>
             </View>
-            <View style={{ alignItems: 'center', bottom: 2 }}>
+            <View style={styles.findView}>
                 <Callout>
                     <Text style={styles.textFind}>Find</Text>
                     <Text style={styles.textFind}>ATM</Text>
                 </Callout>
             </View>
-            <View style={{ alignItems: 'flex-start', right: '5%' }}>
-                <TouchableOpacity style={styles.image}>
+            <View style={styles.userView}>
+                <TouchableOpacity style={styles.imageButton}>
                     <Image
-                        source={require('./assets/user.png')}
+                        source={user}
                         style={styles.imageIcon}
                     />
                 </TouchableOpacity>
             </View>
         </View>
-        )
+        );
     }
 }
 
-const styles = StyleSheet.create({
-    image: {
-        backgroundColor: 'transparent',
-        height: 20,
-        width: 20
-    },
-    imageIcon: {
-        height: 20,
-        width: 20
-    },
-    textFind: {
-        fontSize: 15
-    }
-})
+export default CalloutMap;

@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Image } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, Image } from 'react-native';
 import { Callout } from 'react-native-maps';
-import Null from './assets/null.png';
+import Null from '../assets/null.png';
+import {styles} from'../styles/Styles.CalloutDesc';
 
 class CalloutDesc extends Component{
     render(){
@@ -12,6 +13,7 @@ class CalloutDesc extends Component{
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
                     >
+                    
                         <TouchableOpacity style={styles.bubble}>
                             <Text style={styles.fontTitle}>Bank of America ATM</Text>
                             <Text style={styles.distance}>0.2 mile</Text>
@@ -103,64 +105,5 @@ class CalloutDesc extends Component{
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        alignItems: 'center', 
-        flex: 1 
-    },
-    bubble: {
-        marginHorizontal: 8,
-        marginTop: '7%',
-        backgroundColor: 'white',
-        borderRadius: 5,
-        height: 150,
-        width: 300
-    },
-    fontTitle: {
-        fontSize: 15,
-        margin: 15,
-    },
-    distance: {
-        color: '#cdcdcd',
-        fontSize: 13,
-        textAlign: 'right',
-        margin: 15,
-        bottom: '20%'
-    },
-    desc: {
-        left: 15,
-        bottom: '23%'
-    },
-    textDesc: {
-        fontSize: 15,
-        color: '#72777e'
-    },
-    hours: {
-        color: '#2db784',
-        position: 'absolute',
-        bottom: 0,
-        left: '20%'
-    },
-    
-    buttonDirect: {
-        bottom: '25%',
-        right: '10%'
-    },
-    textDirect: { 
-        fontSize: 15,
-        textAlign: 'right', 
-        color: '#2db784' 
-    },
-    nullIcon: {
-        height: 15,
-        width: 15
-    },
-    nullIconView: {
-        position: 'absolute',
-        top: '47%',
-        left: '57%'
-    },
-});
 
 export default CalloutDesc;
