@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import { View, Text, TouchableOpacity, ScrollView, Image } from 'react-native';
 import { Callout } from 'react-native-maps';
-import Null from '../assets/null.png';
 import {styles} from'../styles/Styles.CalloutDesc';
+import Null from '../assets/null.png';
 
 class CalloutDesc extends Component{
     render(){
