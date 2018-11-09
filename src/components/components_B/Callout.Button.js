@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { Callout } from 'react-native-maps';
+import {styles} from '../styles/Styles.CalloutButton';
 import search from '../assets/search.png';
 import user from '../assets/user.png';
 
