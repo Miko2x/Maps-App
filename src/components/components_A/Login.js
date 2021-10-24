@@ -9,15 +9,15 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: '', 
-            password: ''
+            username: "", 
+            password: ""
         }
     }
     submit() {
-        if(this.state.username==''){
+        if(this.state.username==""){
             return null
         }
-        else if(this.state.password==''){
+        else if(this.state.password==""){
             return null
         }
         else {
@@ -60,7 +60,7 @@ class Login extends Component {
                             onPress={() => this.submit()}
                             style={styles.buttonLogin}
                         >
-                            <Text style={styles.textLogin}>Login</Text>
+                            <Text style={styles.textLogin}>LOGIN</Text>
                         </TouchableOpacity>
                     </View>
                 </ImageBackground>
